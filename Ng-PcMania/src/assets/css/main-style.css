@@ -1,0 +1,493 @@
+/* ========  INDEX  ==========
+1. BASE
+2. NAVBAR
+3. BUTTONS
+4. SIDEBAR
+5. MAIN
+6. FOOTER
+*/
+
+
+/* ================================================
+--> 1. BASE
+================================================== */
+
+html {
+    font-size: 16px;
+}
+
+body {
+    padding-top: 100px;
+    font-size: 14px;
+    height: 100%;
+    background-color: #f8f8f8;
+}
+
+.sticky-offset {
+    top: 100px;
+}
+
+#body-row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+a {
+    color: #313131;
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgb(150, 143, 244);
+}
+
+.my-color {
+    color: rgb(150, 143, 244);
+}
+
+.my-anchor:target {
+    padding-top: 130px;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        padding-top: 100px;
+    }
+    .my-navbar {
+        height: 50px;
+        padding: .5rem .1rem;
+    }
+}
+
+
+/* ================================================
+--> 2. NAVBAR
+================================================== */
+
+nav {
+    background-image: linear-gradient(135deg, rgb(150, 143, 244) 45%, rgb(106, 182, 229) 70%);
+}
+
+.my-navbar {
+    /* padding: 1rem .5rem; */
+    background-image: linear-gradient(135deg, rgb(150, 143, 244) 45%, rgb(106, 182, 229) 70%);
+    height: 100px;
+    display: flex;
+    justify-content: middle;
+    align-items: center;
+}
+
+.my-nav-icon:hover {
+    font-size: 30px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    color: rgb(150, 143, 244);
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.my-btn-font {
+    font-family: 'Poppins', sans-serif;
+    font-size: .7rem;
+}
+
+#my-sm-search-input {
+    position: fixed;
+    font-size: 15px;
+    top: 100px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    justify-content: end;
+    text-align: center;
+}
+
+#my-sm-search-input input {
+    width: 100%;
+    border: none;
+    padding: 20px 60px 20px 40px;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, .4);
+}
+
+#my-cerrar {
+    font-size: 20px;
+    z-index: 1001;
+    right: 23px;
+    position: absolute;
+    margin-right: 10px;
+}
+
+.my-btn-cerrar {
+    background: transparent;
+    border: none;
+    opacity: .5;
+}
+
+
+/* ================================================
+--> 3. BUTTONS
+================================================== */
+
+.btn {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    color: rgb(150, 143, 244);
+    /* BTN HOVER SLOW ANIMATION*/
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn:focus,
+.page-link:focus,
+.custom-select:focus {
+    box-shadow: none;
+}
+
+.btn-search:hover {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-left: 1px solid rgb(150, 143, 244);
+    color: rgb(150, 143, 244);
+    /* BTN HOVER SLOW ANIMATION*/
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    /* BTN SLOWER ANIMATION transition: all .5s ease-in-out; */
+}
+
+.btn-search-two {
+    color: #ffffff !important;
+}
+
+.btn-search-two:hover {
+    color: rgb(150, 143, 244) !important;
+}
+
+.my-btn-toggler {
+    background-color: transparent;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    border: 2px solid rgba(54, 54, 54, 0.5);
+    /* rgb(110, 100, 240) */
+}
+
+.btn-secondary {
+    background-color: rgb(150, 143, 244);
+    border: 1px solid rgb(150, 143, 244);
+    color: #f8f8f8;
+}
+
+.btn-secondary:hover {
+    background-color: transparent;
+    border: 1px solid rgb(150, 143, 244);
+    color: rgb(150, 143, 244);
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn-secondary:active {
+    background-color: transparent!important;
+    border: 1px solid rgb(150, 143, 244)!important;
+    color: rgb(150, 143, 244)!important;
+}
+
+.btn-green {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-green:hover {
+    color: #fff;
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.btn-red {
+    color: #fff;
+    background-color: rgb(179, 63, 83);
+    border-color: rgb(170, 58, 77);
+}
+
+.btn-red:hover {
+    color: #fff;
+    background-color: #be2635;
+    border-color: #c42c3b
+}
+
+.btn-blue {
+    color: #fff;
+    background-color: rgb(106, 182, 229);
+    border-color: rgb(106, 182, 229);
+}
+
+.btn-blue:hover {
+    color: rgb(106, 182, 229);
+    background-color: #fff;
+    border-color: rgb(106, 182, 229);
+}
+
+.btn-light-blue {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-light-blue:hover {
+    color: #fff;
+    background-color: #1496aa;
+    border-color: #118294;
+}
+
+.btn-link {
+    border: none;
+    font-weight: 400;
+    color: #007bff;
+    background-color: transparent;
+}
+
+.btn-link:hover {
+    border: none;
+    color: #007bff;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+
+/* Div relleno antes de search tool */
+
+@media only screen and (max-width: 1040px) {
+    .my-d-none {
+        display: none!important;
+    }
+}
+
+
+/* ================================================
+--> 4. SIDEBAR
+================================================== */
+
+#my-sidebar-container {}
+
+
+/* height: calc(100vh - 100px); Dobro*/
+
+.my-sidebar-container {
+    background-image: linear-gradient(135deg, rgb(150, 143, 244) 45%, rgb(106, 182, 229) 70%)!important;
+    min-height: 100vh;
+    padding: 0;
+    z-index: 5;
+}
+
+
+/* MEDIA - Div gris que Cierra SIDEBAR */
+
+.my-main-overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.my-opacity {
+    animation: opac 0.8s;
+}
+
+@media only screen and (max-width: 1200px) {
+    .my-sidebar-container {
+        padding: 0!important;
+        width: 300px;
+        height: 100%;
+        display: block;
+        position: fixed!important;
+        z-index: 9999;
+        overflow-y: scroll;
+    }
+    .my-hidden {
+        display: none!important;
+    }
+    .my-hidden-overlay {
+        display: block;
+    }
+    .sticky-offset {
+        top: 0;
+    }
+}
+
+
+/* ----------------------- */
+
+.my-sidebar-text {
+    color: #ffffff;
+}
+
+.my-sbar-icon {
+    display: inline-block;
+    width: 60px;
+    margin-bottom: -1px;
+}
+
+.my-list-group {
+    display: flex;
+    line-height: 45px;
+    margin-bottom: -1px;
+    border: 1px solid rgba(0, 0, 0, .125);
+}
+
+.my-list-group:hover {
+    background-color: #ffffff;
+    border: 1px solid rgb(150, 143, 244);
+    color: rgb(150, 143, 244);
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.my-list-size {
+    position: relative;
+    display: block;
+    padding: .4rem 1.25rem .4rem 3.2rem;
+    margin-bottom: -1px;
+}
+
+.my-list-size:hover {
+    background-color: #ffffff;
+    color: rgb(150, 143, 244);
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+
+/* ================================================
+--> 5. MAIN
+================================================== */
+
+.my-main-container {
+    min-height: 1000px;
+}
+
+.my-link-navigation {
+    font-size: 12px;
+    columns: #333;
+    height: 30px;
+}
+
+
+/* LOGGED IN ACCOUNT MENU*/
+
+.my-cuenta-menu-container {
+    width: 180px;
+    padding-top: 10px;
+    z-index: 1001;
+    position: absolute;
+    display: none;
+    left: auto !important;
+    right: 0;
+}
+
+.my-cuenta-menu {
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    border-top: 6px solid rgb(150, 143, 244);
+    padding: 15px;
+}
+
+.my-cuenta-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.my-cuenta-menu ul li {
+    line-height: 24px;
+}
+
+.my-cuenta-menu ul li a {
+    color: #777;
+}
+
+.my-cuenta-menu ul li a:hover {
+    color: #777;
+    text-decoration: underline;
+}
+
+.my-cuenta-menu ul li:last-child {
+    padding-top: 5px;
+}
+
+.my-cuenta-menu ul li:last-child a {
+    color: #313131 !important;
+}
+
+
+/* ON HOVER LOGGED IN ACCOUNT MENU*/
+
+.my-drop-down-menu:hover+.my-cuenta-menu-container {
+    display: block !important;
+}
+
+.my-cuenta-menu-container:hover {
+    display: block !important;
+}
+
+
+/* ================================================
+--> 6. FOOTER
+================================================== */
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.nopadding-carrito {
+    padding-right: 0 !important;
+}
+
+.my-pre-footer {
+    height: 2rem;
+    background-image: linear-gradient(135deg, rgb(106, 182, 229) 45%, rgb(175, 194, 130) 70%)
+}
+
+.my-footer-wraper {
+    background-color: rgb(79, 94, 114);
+    /* rgb(79, 94, 179) */
+    bottom: 0;
+    padding: 3rem 0rem 4rem 0rem;
+}
+
+.my-footer-list {
+    list-style: none;
+    padding-left: 0;
+    color: #ffffff;
+}
+
+.my-footer-h {
+    border-bottom: 1px dotted rgb(175, 194, 130);
+    color: rgb(175, 194, 130);
+    line-height: 2.3em;
+}
+
+.my-socialmedia {
+    font-size: 2.4rem;
+}
+
+.my-footer-list>a,
+.my-socialmedia>a {
+    color: #ffffff
+}
+
+.my-footer-list>a:hover,
+.my-socialmedia>a:hover {
+    color: rgb(175, 194, 130);
+    transition: color .15s ease-in-out;
+}
+
+
+/* MEDIA CAMBIOS */

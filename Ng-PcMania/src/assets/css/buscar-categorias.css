@@ -1,0 +1,58 @@
+/* 1. CATEGORIAS */
+
+.my-categoria-title {
+    padding: 0 0 1.5rem 0;
+}
+
+.my-categoria-options {
+    width: 100%;
+    padding: 0 0 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-select {
+    width: 180px;
+}
+
+.my-nav-pagination {
+    background-image: none;
+}
+
+
+/* color of page link */
+
+.page-link {
+    color: rgb(150, 143, 244)!important;
+    font-weight: 500;
+}
+
+
+/* active pagination */
+
+.page-item.active .page-link {
+    color: #fff!important;
+    background-color: rgb(150, 143, 244);
+    border-color: rgb(150, 143, 244);
+}
+
+@media only screen and (max-width: 576px) {
+    .my-categoria-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    .my-select {
+        margin: 30px 0 30px 0;
+    }
+    .my-categoria-title {
+        padding-left: 1.5rem;
+    }
+}
+
+
+/* 2. BUSQUEDA */
+
+.my-buscar-text {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 300!important;
+}

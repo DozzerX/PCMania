@@ -1,0 +1,88 @@
+<!-- Div MAIN CONTENT -->
+<div class="row my-main-container pl-sm-5 pr-sm-5 pb-sm-5 ">
+
+
+
+
+    <!-- Identificacion -->
+    <div class="col-lg-1 d-none d-lg-block">
+
+    </div>
+
+    <div class="col-12 col-lg-10 my-cuenta-container">
+
+        <h4 class="font-weight-normal mb-3">
+            <a routerLink="/cuenta/direcciones" class="btn btn-secondary mr-3" title="Regresar">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            Direccion
+
+        </h4>
+        <div class="my-cuenta-card justify-content-between d-flex flex-column flex-sm-row overflow-auto">
+
+            <table class="table table-striped my-cuenta-table">
+                <tbody>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <td class="my-cuenta-fontsize">{{direccion.nombre}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Apellidos</th>
+                        <td class="my-cuenta-fontsize">{{direccion.apellidos}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email</th>
+                        <td class="my-cuenta-fontsize">{{direccion.email}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Fecha de nacimiento</th>
+                        <td class="my-cuenta-fontsize">{{direccion.fecha_nacimiento}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">DNI</th>
+                        <td class="my-cuenta-fontsize">{{direccion.dni}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Teléfono</th>
+                        <td class="my-cuenta-fontsize">{{direccion.telefono}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Dirección</th>
+                        <td class="my-cuenta-fontsize">{{direccion.direccion}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Código Postal</th>
+                        <td class="my-cuenta-fontsize">{{direccion.cp}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Población</th>
+                        <td class="my-cuenta-fontsize">{{direccion.poblacion}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Provincia</th>
+                        <td class="my-cuenta-fontsize">{{direccion.provincia}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Opciones</th>
+                        <td>
+                            <a [routerLink]="['/cuenta/modificar-direccion/', direccion.direccion_id]" class="btn btn-green mr-sm-2" title="Modificar">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a (click)="borrarDireccion()" class="btn btn-red" title="Borrar">
+                                <i style="color: white;" class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+                
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-1 d-none d-lg-block">
+
+    </div>
+
+</div>

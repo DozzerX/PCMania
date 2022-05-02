@@ -1,0 +1,55 @@
+<!-- Div MAIN CONTENT -->
+<div class="row my-main-container pl-sm-5 pr-sm-5 pb-sm-5 ">
+
+    <!-- Identificacion -->
+    <div class="col-lg-1 d-none d-lg-block">
+
+    </div>
+
+    <div class="col-12 col-lg-10 my-cuenta-container">
+
+        <h4 class="font-weight-normal mb-3">
+            <a routerLink="/cuenta" class="btn btn-secondary mr-3" title="Regresar">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            Pedidos
+        </h4>
+        <div class="my-cuenta-card justify-content-between d-flex flex-column flex-sm-row overflow-auto">
+
+            <table class="table table-striped my-cuenta-table">
+                <tbody>
+                    <tr>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Nº Artículos</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Detalle</th>
+                    </tr>
+    
+                    <tr *ngFor="let pedido of listaPedidos">
+                        <td>
+                            {{pedido.fecha | date:'h:mm a - dd/MM/yyyy'}}
+                        </td>
+                        <td>
+                            {{pedido.numero_articulos}}
+                        </td>
+                        <td>
+                            {{pedido.total_dinero}}
+                        </td>
+                        <td>
+                            <a routerLink="/cuenta/pedido/{{pedido.pedido_id}}" class="btn btn-light-blue" title="Ir a Detalle">
+                                <i class="fas fa-file-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-1 d-none d-lg-block">
+
+    </div>
+
+</div>

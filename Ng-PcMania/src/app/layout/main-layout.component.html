@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+<!-- MAIN WRAPER -->
+<div class="row" id="body-row">
+    <!-- SIDEBAR -->
+    <div class="col-xl-2 d-xl-block my-sidebar-container my-hidden" id="my-sidebar-container" app-sidebar> <!-- app-sidebar is the selector for the SidebarComponent-->
+
+    </div>
+
+    <!-- COL 10 SEPARATION-->
+    <div class="col-12 col-xl-10 nopadding">
+        <div class="container-fluid">
+
+            <!-- MAIN CONTENT -->
+            <!-- Div opacity -->
+            <div class="my-main-overlay my-opacity" onclick="openSidebar();" id="my-overlay"></div>
+            <!-- DIV Navigation -->
+            <div class="row pl-sm-5 pr-sm-5 pt-1" *ngIf="selectedNav.length">
+                <div class="col-12 d-flex my-link-navigation" >
+                    <ng-template ngFor let-nav [ngForOf]="selectedNav" let-i="index">
+                        <ng-template [ngIf]="selectedIndex > i" [ngIfElse]="currentRoute">
+                            <div class="">
+
+                                <ng-template [ngIf]="3 > selectedRoute.length" [ngIfElse]="hasId">
+                                    <a routerLink="{{selectedRoute[i]}}">{{nav}}</a>
+                                </ng-template>
+                                <ng-template #hasId>
+                                    <a routerLink="{{selectedRoute[i]}}{{guardarID}}">{{nav}}</a>
+                                </ng-template>
+                            </div>
+
+                            <div class="ml-2 mr-2">
+                                <i class="fas fa-angle-right"></i>
+                            </div>
+                        </ng-template>
+    
+                        <ng-template #currentRoute>
+                            <div class="">
+                                <span>{{nav}}</span>
+                            </div>
+                        </ng-template>
+                    </ng-template>
+                    
+                    
+                    
+                </div>
+            </div>
+
+            <router-outlet></router-outlet>
+            <app-footer></app-footer>
+
+        </div>
+    </div>
+
+</div>

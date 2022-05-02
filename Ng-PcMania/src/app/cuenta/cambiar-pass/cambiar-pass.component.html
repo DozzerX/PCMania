@@ -1,0 +1,90 @@
+<!-- Div MAIN CONTENT -->
+<div class="row my-main-container pl-sm-5 pr-sm-5 pb-sm-5 ">
+
+
+
+
+    <!-- Identificacion -->
+    <div class="col-lg-1 d-none d-lg-block">
+
+    </div>
+
+    <div class="col-12 col-lg-10 my-cuenta-container">
+
+        <h4 class="font-weight-normal mb-3">
+        <a routerLink='/cuenta' class="btn btn-secondary mr-3" title="Regresar">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        Cambiar contraseña
+        </h4>
+        <form [formGroup]="passwordFB" (ngSubmit)="ModificarPassword()" class="my-cuenta-card justify-content-between d-flex flex-column flex-sm-row overflow-auto">
+
+
+            <table class="table table-striped my-cuenta-table">
+                <tbody>
+                    <tr>
+                        <th scope="col">Contraseña actual</th>
+                        <td>
+                            <div class="input-group float-left">
+                                <input type="password" class="form-control" name="password" placeholder="Contraseña actual" formControlName="current_password" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Contraseña nueva</th>
+                        <td>
+                            <div class="input-group float-left">
+                                <input type="password" class="form-control" name="new_password" placeholder="Nueva contraseña" formControlName="new_password" id="password" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Repetir contraseña</th>
+                        <td>
+                            <div class="input-group float-left">
+                                <input type="password" class="form-control" name="repeated_password" placeholder="Repetir contraseña" formControlName="confirm_password" id="confirm_password" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Opciones</th>
+                        <td>
+                            <a routerLink='/cuenta' class="btn btn-red" title="Cancelar">
+                                <i class="fas fa-backspace"></i>
+                            </a>
+                            <button type="submit" class="btn btn-green ml-2" title="Acceptar" [disabled]="!validarPasswords" data-toggle="modal" data-target="#myModal">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+                
+            </table>
+
+        </form>
+
+        
+        <!-- WRONG PASSWORD MODAL FROM BOOTSTRAP -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header d-block text-center">
+                    <h4 class="modal-title"> {{tituloModal}} </h4>
+                </div>
+                <div class="modal-body text-center">
+                    <p style='font-size:1rem;'> {{bodyModal}} </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    </div>
+
+    <div class="col-lg-1 d-none d-lg-block">
+
+    </div>
+
+</div>

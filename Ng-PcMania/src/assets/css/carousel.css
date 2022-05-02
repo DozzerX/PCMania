@@ -1,0 +1,33 @@
+.my-carousel {
+    width: 100%;
+    padding: 0 9rem 0 9rem;
+    margin-bottom: 5rem;
+}
+
+.my-carousel-img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1650px) {
+    .my-carousel {
+        padding: 0 8rem 0 8rem;
+    }
+}
+
+@media only screen and (max-width: 1550px) {
+    .my-carousel {
+        padding: 0 6rem 0 6rem;
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    .my-carousel {
+        padding: 0 2rem 0 2rem;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .my-carousel {
+        padding: 0;
+    }
+}

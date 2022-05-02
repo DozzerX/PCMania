@@ -1,0 +1,65 @@
+<!-- Div MAIN CONTENT -->
+<div class="row my-main-container pl-sm-5 pr-sm-5 pb-sm-5 ">
+
+    <!-- Identificacion -->
+    <div class="col-lg-1 d-none d-lg-block">
+
+    </div>
+
+    <div class="col-12 col-lg-10 my-cuenta-container">
+
+        <h4 class="font-weight-normal mb-3">Mis datos</h4>
+        <div class="my-cuenta-card justify-content-between d-flex flex-column flex-sm-row overflow-auto">
+
+
+            <table class="table table-striped my-cuenta-table">
+                <tbody>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <td class="my-cuenta-fontsize">{{usuario.nombre}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Apellidos</th>
+                        <td class="my-cuenta-fontsize">{{usuario.apellidos}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email</th>
+                        <td class="my-cuenta-fontsize">{{usuario.email}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Contraseña</th>
+                        <td>
+                            <a routerLink='/cuenta/cambiar-contraseña' class="btn-link" title="Cambiar Contraseña" style="font-size:.9rem">Cambiar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Dirección</th>
+                        <td>
+                            <a routerLink="/cuenta/direcciones" class="btn-link" title="Ver Direcciones" style="font-size:.9rem">Ver Direcciones</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Pedidos</th>
+                        <td>
+                            <a routerLink="/cuenta/pedidos" class="btn-link" title="Ver Pedidos" style="font-size:.9rem">Ver Pedidos</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Opciones</th>
+                        <td>
+                            <a routerLink="/cuenta/modificar-cuenta" class="btn btn-green mr-sm-2" title="Modificar"><i class="fas fa-edit"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+                
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-1 d-none d-lg-block">
+
+    </div>
+
+</div>

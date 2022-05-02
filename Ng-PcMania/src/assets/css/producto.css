@@ -1,0 +1,202 @@
+.my-product-container {}
+
+@media only screen and (min-width: 768px) {
+    .my-product-container {
+        min-width: 780px;
+    }
+}
+
+.my-small-product {
+    height: 5.5rem;
+    width: 5.5rem;
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    max-width: 100%;
+    margin-right: .5rem;
+}
+
+.my-small-product:hover {
+    cursor: pointer;
+}
+
+.my-product-card-container {
+    box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .15)!important;
+    /* border: 1px solid rgba(0, 0, 0, .125); */
+    /* border-radius: 8px; */
+    background-color: #fff;
+    padding: 0.7rem;
+}
+
+.my-product-cont-outer {
+    overflow-x: scroll;
+    height: 115px;
+}
+
+.my-product-cont-inner {
+    display: flex;
+}
+
+.my-price-border {
+    content: ' ';
+    display: block;
+    border-bottom: .4rem solid rgb(150, 143, 244);
+    width: 30%;
+    margin: 1rem 0 1rem 0;
+}
+
+.my-price-iva {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.my-sub-price-container {
+    line-height: 20px;
+    margin: 0.4rem 0 0 2rem;
+}
+
+.my-no-iva-price {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #bbb;
+}
+
+.my-no-iva-text {
+    font-size: .7rem;
+    font-weight: 700;
+    color: #bbb;
+}
+
+.my-product-short-info {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .my-product-short-info {
+        flex-direction: column;
+        align-items: start;
+        height: 4.5rem;
+        line-height: 2;
+    }
+}
+
+.my-form-control {
+    display: block;
+    padding: .375rem;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    text-align: center;
+    width: 35px!important;
+    height: 38px!important;
+    font-size: .9rem;
+}
+
+.my-btn-up {
+    color: #ccc;
+    font-size: 15px;
+    border-color: #e1e1e1;
+    height: 19px;
+    width: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: .1rem;
+    border-radius: .25rem .25rem 0 0;
+}
+
+.my-btn-down {
+    color: #ccc;
+    font-size: 15px;
+    border-color: #e1e1e1;
+    height: 19px;
+    width: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: .1rem;
+    border-radius: 0 0 .25rem .25rem;
+}
+
+.my-btn-up:hover,
+.my-btn-down:hover {
+    background-color: #e1e1e1;
+    border-color: #e1e1e1;
+    color: #ccc;
+}
+
+.my-btn-up:focus,
+.my-btn-down:focus {
+    box-shadow: none;
+}
+
+
+/* STOCK CLASESS */
+
+.my-stock {
+    font-weight: 500;
+    text-decoration: underline;
+    color: rgb(69, 182, 134)
+}
+
+.my-ultimo-stock {
+    font-weight: 500;
+    text-decoration: underline;
+    color: rgb(227, 159, 0);
+}
+
+.my-sin-stock {
+    font-weight: 500;
+    text-decoration: underline;
+    color: rgb(187, 0, 0);
+}
+
+
+/* PRODUCT SPECS */
+
+.my-specs-header {
+    padding: 0.2rem 0 0 0.5rem;
+}
+
+.my-table-striped tbody tr:nth-of-type(even) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.my-table-product {
+    padding: 0.6rem 1rem 1rem 1rem;
+}
+
+.my-destacados-title {
+    text-align: center;
+    font-weight: 300;
+}
+
+.my-destacados {
+    display: flex;
+}
+
+.my-destacados-link {
+    display: block;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.my-destacados-link:hover {
+    box-shadow: 0 0.25rem 0.5rem rgb(150, 143, 244) !important;
+}
+
+.my-destacados-img {
+    height: 4rem;
+    padding: 0 0.8rem 0 0;
+}
+
+.my-destacados-product {
+    display: flex;
+    height: 2rem !important;
+    line-height: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0.35rem auto;
+    color: #888;
+}

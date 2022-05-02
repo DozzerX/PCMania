@@ -1,0 +1,122 @@
+<!-- Div MAIN CONTENT -->
+<div class="row my-main-container pl-sm-5 pr-sm-5 pb-sm-5 ">
+
+
+
+
+    <!-- Identificacion -->
+    <div class="col-lg-1 d-none d-lg-block">
+
+    </div>
+
+    <div class="col-12 col-lg-10 my-cuenta-container">
+
+        <h4 class="font-weight-normal mb-3">Modificar dirección</h4>
+        <form [formGroup]="direccionFB" (ngSubmit)="modificarDireccion()" class="my-cuenta-card justify-content-between d-flex flex-column flex-sm-row overflow-auto">
+
+
+            <table class="table table-striped my-cuenta-table">
+                <tbody>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <td>
+                            <div class="input-group float-left">
+                                <input type="text" class="form-control" placeholder="Nombre.." formControlName="nombre" name="nombre" pattern="[a-zA-Z\s]+" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Apellidos</th>
+                        <td>
+                            <div class="input-group float-left">
+                                <input type="text" class="form-control" placeholder="Apellidos.." formControlName="apellidos" name="apellidos" pattern="[a-zA-Z\s]+" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email</th>
+                        <td>
+                            <div class="input-group float-left">
+                                <input type="email" class="form-control" placeholder="Email.." formControlName="email" name="email" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">DNI</th>
+                        <td>
+                            <div class="input-group float-left">
+                                <input type="text" class="form-control" placeholder="DNI.." formControlName="dni" name="dni" pattern="[a-zA-Z0-9]+" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Fecha de Nacimiento</th>
+                        <td>
+                            <div class="input-group float-left">
+                                <input type="date" class="form-control" formControlName="fecha_nacimiento" name="fecha_nacimiento" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Teléfono</th>
+                        <td>
+                            <div class="input-group float-left">
+                                <input type="number" class="form-control" placeholder="Teléfono.." formControlName="telefono" name="telefono" pattern="[0-9]{9}" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Dirección</th>
+                        <td>
+                            <div class="input-group float-left">
+                                <input type="text" class="form-control" placeholder="Dirección.." formControlName="direccion" name="direccion" pattern="[a-zA-Z\s0-9.,]+" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Código Postal</th>
+                        <td>
+                            <div class="input-group float-left">
+                                <input type="text" class="form-control" placeholder="Código Postal.." formControlName="cp" name="cp" pattern="[0-9]{5}" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Población</th>
+                        <td>
+                            <div class="input-group float-left">
+                                <input type="text" class="form-control" placeholder="Población.." formControlName="poblacion" name="poblacion" pattern="[a-zA-Z\s0-9]+" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Provincia</th>
+                        <td>
+                            <div class="input-group float-left">
+                                <input type="text" class="form-control" placeholder="Provincia.." formControlName="provincia" name="provincia" pattern="[a-zA-Z\s0-9]+" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Opciones</th>
+                        <td>
+                            <a [routerLink]="['/cuenta/direccion/', direccion.direccion_id]" class="btn btn-red" title="Cancelar">
+                                <i class="fas fa-backspace"></i>
+                            </a>
+                            <button type="submit" class="btn btn-green ml-2" title="Acceptar" [disabled]="!direccionFB.valid">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </form>
+
+    </div>
+
+    <div class="col-lg-1 d-none d-lg-block">
+
+    </div>
+
+</div>

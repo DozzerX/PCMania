@@ -1,0 +1,52 @@
+<!-- Div MAIN CONTENT -->
+<div class="row my-main-container pl-sm-5 pr-sm-5 pb-sm-5 ">
+    <!-- Identificacion -->
+    <div class="col-lg-1 d-none d-lg-block">
+
+    </div>
+
+    <div class="col-12 col-lg-10 my-cuenta-container">
+
+        <h4 class="font-weight-normal mb-3">Identifícate o crea una cuenta</h4>
+        <div class="my-cuenta-card justify-content-between d-flex flex-column flex-sm-row">
+
+            <div class="my-cuenta-content d-flex flex-column">
+                <h5>¿No tienes cuenta?</h5>
+                <p>Si aun no tienes cuenta en PC Mania, te invitamos a que te registres, para poder aprovechar al máximo
+                    los serivicios de nuestra página web.
+                </p>
+                <div>
+                    <a routerLink="/register" class="btn btn-secondary">Crear una cuenta</a>
+                </div>
+            </div>
+            <form [formGroup]="loginFB" (ngSubmit)="login()" class="my-cuenta-content d-flex flex-column"
+                method="post">
+                <h5>Si ya tienes una cuenta, identificate:</h5>
+
+                <!-- WRONG PASSWORD -->
+                <div *ngIf="loginIncorecto" class="my-wrong-login" id="login_incorrect">
+                    Usuario o contraseña incorrecto
+                </div><br>
+
+                <div class="input-group float-left">
+                    <input type="email" class="form-control" formControlName="email" name="email" placeholder="Email.." id="email" required>
+                </div>
+                <br>
+                <div class="input-group float-left">
+                    <input type="password" class="form-control" formControlName="password" name="password" placeholder="Contraseña.." id="password"
+                        required>
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="#">He olvidado mi contraseña</a>
+                    <input type="submit" class="btn btn-secondary" value="Entrar" [disabled]="!loginFB.valid">
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-1 d-none d-lg-block">
+
+    </div>
+</div>

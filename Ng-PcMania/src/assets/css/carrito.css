@@ -1,0 +1,246 @@
+.my-main-container-carrito {
+    min-height: 700px;
+}
+
+.my-carrito-container {
+    box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .15)!important;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: .8em;
+}
+
+.my-carrito-table th,
+.my-carrito-table td {
+    vertical-align: baseline;
+}
+
+.my-btn-pls-mns {
+    width: 30px;
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+    color: #777;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.my-btn-pls-mns:hover {
+    background: #dfdede;
+    border: 1px solid #ccc;
+    color: #777;
+}
+
+.my-carrito-cantidad {
+    text-align: center;
+    width: 30px;
+}
+
+input[type="text"]:disabled {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    height: 30px;
+}
+
+.my-carrito-img {
+    width: 100px;
+}
+
+.my-carrito-table-header {}
+
+@media (max-width: 768px) {
+    .my-carrito-table-header {
+        display: none;
+    }
+}
+
+
+/*-------- TABLE TD -------- */
+
+.my-carrito-td-img {
+    width: 12%
+}
+
+.my-carrito-td-link {
+    width: 60%;
+}
+
+.my-carrito-td-cantidad {}
+
+.my-carrito-td-total {
+    font-size: 1rem;
+}
+
+.my-carrito-td-x {}
+
+.my-carrito-td-x-sm {
+    display: none;
+}
+
+.my-carrito-delete {
+    color: rgb(150, 143, 244);
+    font-size: 1rem;
+}
+
+.my-carrito-delete:hover {
+    color: rgb(108, 104, 165);
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.my-carrito-subtotal-cont {
+    display: flex;
+    justify-content: flex-end!important;
+    padding: .75rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.my-carrito-subtotal-cont span {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-right: 5rem;
+}
+
+.my-carrito-btns {
+    display: flex;
+    justify-content: space-between;
+    padding: .75rem;
+    border-top: 1px solid #dee2e6;
+}
+
+@media (max-width: 992px) {
+    .my-carrito-td-img {
+        width: 15%;
+        padding: .3rem!important;
+    }
+    .my-carrito-img {
+        margin: 10px 0 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .my-carrito-td-link {
+        vertical-align: top!important;
+    }
+    .my-carrito-btns {
+        flex-direction: column;
+    }
+}
+
+@media (max-width:768px) {
+    .my-align-items {
+        border-top: 1px solid #ccc;
+        position: relative;
+        text-align: center!important;
+    }
+    .my-carrito-delete {
+        font-size: 1.3rem;
+        margin: 0 .7rem 0 0;
+    }
+    .my-align-items td {
+        padding: .5rem
+    }
+    .my-align-items td:first-child {
+        text-align: right!important;
+    }
+    .my-carrito-img {
+        margin: auto;
+        margin-top: 10px!important;
+    }
+    .my-carrito-td-img {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        border-top: 0px!important;
+    }
+    .my-carrito-td-link {
+        display: block;
+        width: auto;
+        border-top: 0px!important;
+    }
+    .my-carrito-td-cantidad {
+        display: block;
+        width: auto;
+        border-top: 0px!important;
+    }
+    .my-carrito-td-total {
+        display: block;
+        width: auto;
+        font-size: 1rem;
+        border-top: 0px!important;
+    }
+    .my-carrito-td-x {
+        display: none;
+    }
+    .my-carrito-td-x-sm {
+        display: block;
+        width: 100%;
+        border-top: 0px!important;
+        margin: auto;
+        float: right!important;
+        text-align: center;
+        padding: 0!important;
+        height: 10px;
+    }
+}
+
+
+/*        SUBTOTAL        */
+
+@media (max-width:1200px) {
+    .my-carrito-subtotal-cont span {
+        margin-right: 3.5rem;
+    }
+}
+
+@media (max-width:768px) {
+    .my-carrito-subtotal-cont {
+        flex-direction: column;
+        text-align: center;
+    }
+    .my-carrito-subtotal-cont span {
+        margin-right: 0;
+    }
+    .my-carrito-subtotal-cont span:first-child {
+        margin-bottom: 10px;
+    }
+}
+
+
+/* TOTAL */
+
+.my-total-comprar {
+    margin: 100px 0 150px 0;
+}
+
+
+/* Unidades carrito global */
+
+.my-unidades {
+    position: absolute;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    display: inline-block;
+    padding: .25rem .4rem .25rem .42rem;
+    background-color: rgb(150, 143, 244);
+    color: #fff;
+    font-size: .85rem;
+    font-weight: 700;
+    line-height: 1;
+    border-radius: 20rem;
+    top: -1rem;
+    right: 0;
+}
+
+.my-unidades:hover {
+    color: #fff;
+}
+
+
+/* modal no direccion */
+
+.my-modal-footer {
+    justify-content: space-between!important;
+}

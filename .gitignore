@@ -1,0 +1,48 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+Ng-PcMania/dist
+Ng-PcMania/tmp
+Ng-PcMania/out-tsc
+# Only exists if Bazel was run
+Ng-PcMania/bazel-out
+
+# dependencies
+Ng-PcMania/node_modules
+
+# profiling files
+Ng-PcMania/chrome-profiler-events*.json
+
+# IDEs and editors
+Ng-PcMania/.idea
+Ng-PcMania/.project
+Ng-PcMania/.classpath
+Ng-PcMania/.c9/
+Ng-PcMania/*.launch
+Ng-PcMania/.settings/
+Ng-PcMania/*.sublime-workspace
+Ng-PcMania/.browserslistrc
+Ng-PcMania/karma.conf.js
+
+# IDE - VSCode
+Ng-PcMania/.vscode/*
+Ng-PcMania/!.vscode/settings.json
+Ng-PcMania/!.vscode/tasks.json
+Ng-PcMania/!.vscode/launch.json
+Ng-PcMania/!.vscode/extensions.json
+Ng-PcMania/.history/*
+
+
+# misc
+Ng-PcMania/.sass-cache
+Ng-PcMania/connect.lock
+Ng-PcMania/coverage
+Ng-PcMania/libpeerconnection.log
+Ng-PcMania/npm-debug.log
+Ng-PcMania/yarn-error.log
+Ng-PcMania/testem.log
+Ng-PcMania/typings
+
+# System Files
+Ng-PcMania/.DS_Store
+Ng-PcMania/Thumbs.db

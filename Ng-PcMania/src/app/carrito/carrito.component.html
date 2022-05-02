@@ -1,0 +1,152 @@
+<!-- Div MAIN CONTENT -->
+<div class="row my-main-container-carrito">
+
+    <div class="container">
+        <form method="post">
+            <div class="row">
+
+                
+                <div class="col-12">
+
+
+                    <div class="my-carrito-container">
+                        <h4 class="font-weight-normal text-monospace mb-3 ml-3">
+                            Tu Pedido
+                        </h4>
+                        <table class="table my-carrito-table">
+                            <thead>
+                                <tr class="my-carrito-table-header ">
+                                    <th style="border-bottom:none; "></th>
+                                    <th style="border-bottom:none; ">Producto</th>
+                                    <th style="border-bottom:none; ">Cantidad</th>
+                                    <th style="border-bottom:none; ">Total</th>
+                                    <th style="border-bottom:none; "></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="my-align-items" *ngFor="let prod of productoList">
+                                    <td class="my-carrito-td-x-sm">
+                                        <a class="my-carrito-delete" (click)="eliminarProducto(prod.producto_id)" [routerLink]="">
+                                            <i class="fas fa-times"></i>
+                                        </a>
+                                    </td>
+                                    <td class="my-carrito-td-img ">
+                                        <a routerLink="/producto/{{prod.producto_id}}">
+                                        <img class="img-fluid my-carrito-img " src="http://localhost:3000/public/images/Contenido/{{prod.nombre_img[0]}}">
+                                        </a>
+                                    </td>
+
+                                    <td class="my-carrito-td-link ">
+                                        <a class="my-pedido-link " routerLink="/producto/{{prod.producto_id}}">
+                                        {{prod.nombre_producto}}
+                                        </a>
+                                    </td>
+
+                                    <td class="my-carrito-td-cantidad">
+                                        <span class="d-inline-flex">
+                                            <button class="btn my-btn-pls-mns" type="button" (click)="menosUno(prod.producto_id)">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                            <input class="my-carrito-cantidad" type="text" min="1" max="10" value="{{prod.cantidad_comprar}}" disabled="disabled">
+                                            <button class="btn my-btn-pls-mns" type="button" (click)="masUno(prod.producto_id)">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </span>
+                                        <input style="display: none;" type="text">
+                                    </td>
+
+                                    <td class="my-carrito-td-total">{{prod.total_precio}}</td>
+                                    <td class="my-carrito-td-x">
+                                        <a class="my-carrito-delete" (click)="eliminarProducto(prod.producto_id)" [routerLink]="">
+                                            <i class="fas fa-times"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <div class="my-carrito-subtotal-cont">
+                            <span>Subtotal: </span>
+                            <span id="subtotal">{{subtotal}}€</span>
+
+                        </div>
+
+                        <div>
+                            <span class="my-carrito-btns">
+                                <a class="btn btn-secondary mb-3 mb-md-0" routerLink="/">Seguir comprando</a>
+                            </span>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- TOTAL -->
+                <div class="d-none d-md-block col-md-5 col-xl-6">
+                </div>
+
+                <div class="col-12 col-md-7 col-xl-6 my-total-comprar">
+
+                    <div class="my-carrito-container">
+                        <h4 class="font-weight-normal text-monospace mb-3 ml-3">
+                            Total
+                        </h4>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Envio</th>
+                                <th><span id="coste_envio">{{productoList.length*3.99}}</span>€</th>
+                                <td>3.99€ x <span>{{productoList.length}}</span></td>
+                            </tr>
+                            <tr style="font-size:1rem;">
+                                <th>Total</th>
+                                <th colspan="2"><span id="precio_final"></span>{{total}}€</th>
+                            </tr>
+                            
+                            <tr *ngIf="isLogged; else notLogged">
+                                <td colspan="3">
+                                    <div class="input-group">
+                                        <select class="custom-select" [(ngModel)]="direccionSeleccionada" (change)="capturarDireccion()" name="direccion" id="direccion">
+                                            <option value="0" selected>Seleccionar una dirección de envio</option>
+
+                                            <ng-template [ngIf]="direccionList.length > 0" [ngIfElse]="noDireccion" >
+                                                <option *ngFor="let direccion of direccionList" value="{{direccion.direccion_id}}">{{direccion.direccion}}</option>
+                                            </ng-template>
+
+                                            <ng-template #noDireccion>
+                                                <option value="0" >No tienes ninguna dirección creada</option>
+                                            </ng-template>
+
+                                        </select>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-secondary" type="button" style="z-index:1!important;">Info</button>
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+
+                            <ng-template #notLogged>
+                                <tr>
+                                    <th>
+                                        Elegir <br class="d-block d-sm-none"> dirección:
+                                    </th>
+                                    <td colspan="2">
+                                        <a routerLink="/login" class="btn btn-green" style="z-index:1!important;">Iniciar sesión</a>
+                                    </td>
+                                </tr>
+                            </ng-template>
+                            
+                        </table>
+                            <button type="submit" class="btn btn-blue" (click)="realizarCompra()" [disabled]="btnComprar" onclick="return confirm('¿Está seguro de querrer realizar esta compra?')">Finalizar compra</button>
+
+
+                    </div>
+
+                </div>
+                
+            </div>
+        </form>
+
+    </div>
+
+</div>

@@ -1,0 +1,81 @@
+<!-- Div MAIN CONTENT -->
+<div class="row my-main-container pl-sm-5 pr-sm-5 pb-sm-5 ">
+
+    <!-- Identificacion -->
+    <div class="col-lg-1 d-none d-lg-block">
+
+    </div>
+
+    <div class="col-12 col-lg-10 my-cuenta-container">
+
+        <h4 class="font-weight-normal mb-3">
+            <a routerLink="/cuenta/pedidos" class="btn btn-secondary mr-3" title="Regresar">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            Pedido
+        </h4>
+        <div class="my-cuenta-card justify-content-between d-flex flex-column  overflow-auto" style="background-color:#fff;">
+
+
+            <table class="table table-striped my-cuenta-table">
+                <tbody>
+                    <tr>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Nº Artículos</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Factura</th>
+                    </tr>
+                </tbody>
+                
+                <tr>
+                    <td>
+                        {{pedido.fecha | date:'dd/MM/yyyy'}}
+                    </td>
+                    <td>
+                        {{pedido.numero_articulos}}
+                    </td>
+                    <td>
+                        {{pedido.total_dinero}} €
+                    </td>
+                    <td>
+                        <button class="btn-link" title="Ver Factura" style="font-size:.9rem;" (click)="getFacturaPdf()">Ver Factura</button>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="table my-cuenta-table mb-auto">
+                <tr>
+                    <td colspan="4" class="">
+                        <h5>Artículos comprados: </h5>
+                    </td>
+
+                </tr>
+                <tr *ngFor="let producto of productosList">
+                    <td class="d-flex">
+                        <span><img class="my-pedido-img" src="http://localhost:3000/public/images/Contenido/{{producto.nombre_img[0]}}"></span>
+                        <span>
+                            <a class="my-pedido-link" routerLink="/producto/{{producto.producto_id}}">{{producto.nombre_producto}}</a><br>
+                            <span>
+                                {{producto.precio_con_iva}}€ x
+                                <ng-template ngFor let-car [ngForOf]="carritoList">
+                                    <ng-template [ngIf]="car.producto_id == producto.producto_id">
+                                        {{car.cantidad}}
+                                    </ng-template>
+                                </ng-template>
+                            </span>
+                        </span>
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-1 d-none d-lg-block">
+
+    </div>
+
+</div>

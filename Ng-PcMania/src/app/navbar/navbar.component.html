@@ -1,0 +1,171 @@
+<!-- NAVBAR -->
+<header class="fixed-top container-fluid ">
+    <div class="row my-navbar">
+        <!-- DIV UNO DE NAVBAR-->
+        <!-- nav logo -->
+        <div class="col-3 p-0">
+            <a routerLink="/" class="">
+                <img src="assets/images/pcmania.png" alt="Inicio" class="img-fluid ">
+            </a>
+        </div>
+        <!-- DIV DOS DE NAVBAR -->
+        <div class="col-9 pr-0">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <!--Div button de despluegar -->
+                    <div class="col-1 justify-content-center d-flex">
+                        <button class="my-btn-toggler navbar-light d-block d-xl-none" onclick="openSidebar();" type="button" data-toggle="collapse" data-target="#sidebar-container" aria-controls="my-sidebar-container" aria-expanded="false">
+                            <i class="navbar-toggler-icon"></i>
+                        </button>
+                    </div>
+                    <!--Div search -->
+                    <div class="d-none d-sm-block col-sm-6">
+                        <div class="input-group float-left">
+                            <input type="text" class="form-control" [formControl]="buscarInput" placeholder="Buscar.." name="buscar" id="buscar" autocomplete="off">
+                            <div class="input-group-append">
+                                <button class="btn btn-search" type="button" (click)="busqueda()">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Div de relleno -->
+                    <div class="my-d-none col-md-1 d-md-block"></div>
+                    <!-- Div ul icons -->
+                    <div class="col-6 col-sm-4 col-md-4 pl-0 pr-0 d-flex justify-content-sm-center justify-content-end ml-auto" [ngSwitch]="navbar">
+                        <!-- ICONOS DENTRO DE UL MAYOR DE 576px-->
+                        <ul class="nav d-none d-sm-inline-flex">
+                            <li class="d-block d-sm-none">
+                                <a href="#" class="btn btn-search-two">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </li>
+                            
+                            <li class="ml-3 ml-sm-0 " *ngSwitchCase="'notLogged'">
+                                <a routerLink="/login" class="btn">
+                                    <span class="d-none d-lg-inline-flex">Cuenta</span>
+                                    <i class="fas fa-user" style="font-size:1.25rem; margin-left:5px"></i>
+                                </a>
+                            </li>
+                            <li class="ml-3 ml-sm-0" style="position:relative;" *ngSwitchCase="'logged'">
+                                <a routerLink="/cuenta" class="btn my-drop-down-menu" data-toggle="dropdown">
+                                    <span class="d-none d-lg-inline-flex">Cuenta</span>
+                                    <i class="fas fa-user" style="font-size:1.25rem"></i>
+                                </a>
+                                <!-- MENU WHEN LOGGED IN -->
+                                <div class="my-cuenta-menu-container" id="my-menu-target">
+                                    <div class="my-cuenta-menu">
+                                        <ul>
+                                            <li><a routerLink="/cuenta">Mi cuenta</a></li>
+                                            <li><a routerLink="/cuenta/pedidos">Mis pedidos</a></li>
+                                            <li><a routerLink="/cuenta/direcciones">Direcciones de envio</a></li>
+                                            <li><a routerLink='/cuenta/cambiar-contraseña'>Cambiar contraseña</a></li>
+                                            <li><a (click)="logOut()" [routerLink]="">CERRAR SESIÓN</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="ml-3" *ngIf="carritoIsDeclared; else carritoNotDeclared">
+                                <a routerLink="/carrito" class="btn" style="position:relative;">
+                                    <span class="d-none d-lg-inline-flex">Carrito</span>
+                                    <i class="fas fa-shopping-cart" style="font-size:1.25rem"></i>
+                                    <span class="my-unidades text-monospace">
+                                        {{unidadesCarrito}}
+                                    </span>
+                                </a>
+                            </li>
+
+                            <ng-template #carritoNotDeclared>
+                                <li class="ml-3">
+                                    <a routerLink="/carrito" class="btn">
+                                        <span class="d-none d-lg-inline-flex">Carrito</span>
+                                        <i class="fas fa-shopping-cart" style="font-size:1.25rem"></i>
+                                    </a>
+                                </li>
+                            </ng-template>
+
+                        </ul>
+
+                        <!-- ICONOS FUERA DE UL MENOR DE 576px -->
+                        <div class="d-flex d-sm-none justify-content-between">
+                            <div id="my-sm-search">
+                                <a href="#" class="btn btn-search-two" data-toggle="collapse" data-target="#my-sm-search-input" aria-controls="my-sm-search-input" aria-expanded="false">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                                <!-- DIV SM SEARCH -->
+                                
+                                <div id="my-sm-search-input" class="row collapse navbar-collapse">
+                                    <input [formControl]="buscarInput" (keyup.enter)="busqueda()" id="buscar" name="buscar" type="text" placeholder="Buscar.." >
+                                    <div id="my-cerrar">
+                                        <a class="my-btn-cerrar" data-toggle="collapse" data-target="#my-sm-search-input" aria-controls="my-sm-search-input" aria-expanded="false">
+                                            <i class="fas fa-times"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                
+                            </div>
+
+                            <div class="ml-3" *ngSwitchCase="'notLogged'">
+                                <a routerLink="/login" class="btn">
+                                    <span class="d-none d-lg-inline-flex">Cuenta</span>
+                                    <i class="fas fa-user" style="font-size:1.25rem"></i>
+                                </a>
+                            </div>
+                            <div class="ml-3" style="position:relative;" *ngSwitchCase="'logged'">
+
+                                <a routerLink="/cuenta" class="btn my-drop-down-menu" data-toggle="dropdown">
+                                    <span class="d-none d-lg-inline-flex">Cuenta</span>
+                                    <i class="fas fa-user" style="font-size:1.25rem"></i>
+                                </a>
+                                <div class="my-cuenta-menu-container" id="my-menu-target">
+                                    <div class="my-cuenta-menu">
+                                        <ul>
+                                            <li><a routerLink="/cuenta">Mi cuenta</a></li>
+                                            <li><a routerLink="/cuenta/pedidos">Mis pedidos</a></li>
+                                            <li><a routerLink="/cuenta/direcciones">Direcciones de envio</a></li>
+                                            <li><a routerLink="/cuenta/cambiar-contraseña">Cambiar contraseña</a></li>
+                                            <li><a (click)="logOut()" [routerLink]="">CERRAR SESIÓN</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="ml-3" *ngIf="carritoIsDeclared; else carritoNotDeclared2">
+                                <a routerLink="/carrito" class="btn" style="position:relative;">
+                                    <span class="d-none d-lg-inline-flex">Carrito</span>
+                                    <i class="fas fa-shopping-cart" style="font-size:1.25rem"></i>
+                                    <span class="my-unidades text-monospace">
+                                        {{unidadesCarrito}}
+                                    </span>
+                                </a>
+                            </div>
+
+                            <ng-template #carritoNotDeclared2>
+                                <div class="ml-3">
+                                    <a routerLink="/carrito" class="btn">
+                                        <span class="d-none d-lg-inline-flex">Carrito</span>
+                                        <i class="fas fa-shopping-cart" style="font-size:1.25rem"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                                
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</header>

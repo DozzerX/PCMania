@@ -1,0 +1,65 @@
+<!-- Div MAIN CONTENT -->
+<div class="row my-main-container pl-sm-5 pr-sm-5 pb-sm-5 ">
+
+    <!-- Identificacion -->
+    <div class="col-lg-1 d-none d-lg-block">
+
+    </div>
+
+    <div class="col-12 col-lg-10 my-cuenta-container">
+
+        <h4 class="font-weight-normal mb-3">
+            <a routerLink="/cuenta" class="btn btn-secondary mr-3" title="Regresar">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            Direcciones
+        </h4>
+        <div class="my-cuenta-card justify-content-between d-flex flex-column flex-sm-row overflow-auto">
+
+            <table class="table table-striped my-cuenta-table">
+                <tbody>
+                    <tr>
+                        <th colspan="3">
+                            <a routerLink="/cuenta/crear-direccion" class="btn btn-secondary my-margin-direc" title="Crear nueva">
+                                <i class="fas fa-plus"></i>
+                            </a>
+                            <span class="d-inline-block">Crear una nueva dirección</span>
+                        </th>
+                    </tr>
+    
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Receptor:</th>
+                        <th scope="col">Direccion:</th>
+                        <th scope="col">Detalle</th>
+                    </tr>
+                    <tr *ngFor="let direccion of listDirecciones;">
+                        <td class="my-cuenta-fontsize">
+                            {{direccion.nombre}}
+                        </td>
+                        <td class="my-cuenta-fontsize">
+                            {{direccion.direccion}}
+                        </td>
+                        <td>
+                            <a [routerLink]="['/cuenta/direccion/', direccion.direccion_id]" class="btn btn-light-blue" title="Ir a Direccion">
+                                <i class="fas fa-file-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-1 d-none d-lg-block">
+
+    </div>
+
+</div>

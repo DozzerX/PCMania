@@ -1,0 +1,19 @@
+{
+  "name": "api-ng-pcmania",
+  "version": "1.0.0",
+  "description": "Api node para Pcmania",
+  "main": "./src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Plamen",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.2",
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "pdfkit": "^0.13.0"
+  }
+}
